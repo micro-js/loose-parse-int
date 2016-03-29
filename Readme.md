@@ -6,7 +6,7 @@
 [![NPM version][npm-image]][npm-url]
 [![Code style][standard-image]][standard-url]
 
-Parses a string and returns an integer if possible
+Parses a string and returns an integer if possible. If it cannot be converted it'll just return the original string.
 
 ## Installation
 
@@ -17,15 +17,19 @@ Parses a string and returns an integer if possible
 ```js
 var looseParseInt = require('@f/loose-parse-int')
 
+looseParseInt('1') // -> 1
+looseParseInt('') // -> ''
+looseParseInt('abc') // -> 'abc'
+looseParseInt('123abc') // -> '123abc'
 ```
 
 ## API
 
-### looseParseInt(arg)
+### looseParseInt(str)
 
-- `arg` -
+- `str` - A string to convert to an integer
 
-**Returns:**
+**Returns:** Parsed number or if not possible, the original string
 
 ## License
 
